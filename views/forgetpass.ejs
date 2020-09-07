@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+
+  <!-- ============ Section begins for login Form ============= -->
+  <section class="sec">
+    <div class="container mt-5" id="commentForm" style="font-family: 'Baloo Da 2'; ">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4><strong>Forgot Password</strong></h4>
+        </div>
+        <div class="card-body">
+          <form action="/changeAdminPass2" method="POST">
+
+              <div class="form-group">
+                <label for="currentPassword">Current Password</label>
+                <input type="password" class="form-control" id="email" placeholder="Enter your current password" name="currentPass">
+                <!-- <small id="password" class="form-text text-muted invalid-feedback">
+                  Your email must be a valid email
+                </small> -->
+              </div>
+
+              <div class="form-group">
+                <label for="currentPassword">New Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your New password" name="newPass">
+                <!-- <small id="password" class="form-text text-muted invalid-feedback">
+                  Your email must be a valid email
+                </small> -->
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Confirm password" name="confirmNewPass">
+                <!-- <small id="password" class="form-text text-muted invalid-feedback">
+                  Your password must be a valid 
+                </small> -->
+              </div>
+              <div class="card-footer mr-auto">
+                <button class="btn cardbutton btn-primary" type="submit">Submit</button>
+              </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <br><br>
+
+  <a href="#" class="to-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+
+<%- include('partials/footer') %>

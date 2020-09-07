@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<!-- ================ Alerts ============== -->
+
+<!-- <div id="success" class="alert alert-success alert-dismissible fade" role="alert">
+  <strong>Success!</strong> Login Successful
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div id="failure" class="alert alert-danger alert-dismissible fade" role="alert">
+  <strong>Error!</strong>Please Enter all the fields
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+ -->
+
+<!-- ============ login Form ============= -->
+<section class="sec">
+  <div class="container  mt-5" id="commentForm" style="font-family: 'Baloo Da 2'; ">
+
+    <div class="card">
+      <div class="card-header text-center">
+        <h4><strong>Login</strong></h4>
+      </div>
+      <div class="card-body">
+
+        <% if (success_message != ''){ %>
+          <div class="alert alert-dismissible alert-success">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong> <%= success_message %> </strong>
+          </div>
+          <% } %>
+          <% if( error != '') { %>
+          <div class="alert alert-dismissible alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong><%= error %></strong>
+          </div>
+          <% } %>
+
+        <form action="/login" method="POST">
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email">
+            <small id="emailvalid" class="form-text text-muted invalid-feedback">
+              Your email must be a valid email
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password"
+              autocomplete="off">
+            <!-- <h5 id="passcheck" style="color: red;">
+              **Please Fill the password
+            </h5> -->
+          </div>
+          <div class="card-footer mr-auto">
+            <a href="/" class="btn btn-outline-danger">cancel</a>
+            <button type="submit" id="submit" class="btn cardbutton btn-primary">Login</button>
+            <a href="/forgetpass" style="text-decoration: none;">forgot password ?|</a>
+            <a href="/register" style="text-decoration: none;">New user</a>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+
+</section>
+<br><br>
+
+<a href="#" class="to-top">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+<%- include('partials/footer') %>

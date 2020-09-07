@@ -1,0 +1,378 @@
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  margin: 10px auto 20px;
+  background: #1c1f54;
+  height: 3px;
+  width: 170px;
+}
+
+.sec {
+  height: auto;
+  width: 100%;
+}
+
+li{
+  font-family: 'Open Sans';
+}
+
+      /* ------------------------------ Pre Loader ---------------------------- */
+     /* ---------------------------------------------------------------------- */
+            
+     .loader_bg{
+      position: fixed;
+      z-index: 9999999999999;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+    }
+    .loader{
+      border: 0 solid transparent;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: calc(50vh - 75px);
+      left: calc(50vw - 75px);
+    }
+    .loader::before, .loader::after{
+     content: '';
+     border: 1em solid #ff5733;
+     border-radius: 50%;
+     width: inherit;
+     height: inherit;
+     position: absolute;
+     top: 0;
+     left: 0;
+     animation: loader 2s linear infinite;
+     opacity: 0; 
+    }
+    .loader::before{
+      animation-delay: .5s;
+    }
+    @keyframes loader{
+      0%{
+        transform: scale(0);
+        opacity: 0;
+      }
+      50%{
+        opacity: 1;
+      }
+      100%{
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+     
+    /* ------------------------------- To Up Arrow ---------------------------------------- */
+      /* ----------------------------------------------------------------------------------- */
+      .to-top{
+        z-index: 9999999999999;
+        background: #1c1f54;
+        position: fixed;
+        bottom: 16px;
+        right: 32px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s;
+      }
+      .to-top.active{
+        bottom: 32px;
+        pointer-events: auto;
+        opacity: 1;
+      }
+
+/* =========================== Home page ========================= */
+nav img {
+  position: absolute;
+  left: 5%;
+  top: -5px;
+  height: 68px;
+  width: 80px;
+
+}
+
+.navbar {
+  background-color: #1c1f54 !important;
+}
+
+.navhover:hover {
+  background-color: white;
+  color: #1c1f54 !important;
+}
+
+.bgimage {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(11, 14, 15, 0.6)), url('/frontbg.jpg') no-repeat center center fixed;
+  opacity: 0.9;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.welcome {
+  line-height: 4.5rem;
+  font-size: 3.5rem;
+  font-family: 'ubuntu';
+}
+
+.landingpagetext {
+  position: relative;
+  top: 30%;
+}
+
+/* ============================= About Us ========================== */
+
+#aboutus {
+  background-image: url(/aboutusbg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: 'Open Sans';
+}
+.paragraph {
+  font-size: .9rem;
+  font-weight: 400;
+  color: #606060;
+  font-family: 'Baloo Da 2';
+}
+
+/* ================================ Courses =============================== */
+
+.education-training{
+  font-family: 'Raleway', sans-serif;
+}
+
+.cardtitle{
+  background-color: #1c1f54;
+  color: white;
+}
+.cardbutton{
+  border-color: #1c1f54;
+  background-color: white;
+  color: #1c1f54;
+}
+.cardbutton:hover{
+  background-color: #1c1f54;
+  color: white;
+}
+
+
+.cards{
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
+}
+
+.cards:hover{
+   transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+
+
+/* ======================== Contact Us ====================== */
+.contactbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.contactbutton button {
+  border-color: #1c1f54;
+  background-color: white;
+  color: black;
+  margin-top: -15px;
+  border-radius: 15px;
+}
+
+.contactbutton button:hover {
+  background-color: #1c1f54;
+  color: white;
+  border-color: transparent;
+
+}
+
+::placeholder {
+  font-style: italic;
+}
+
+/* ========================= Footer ====================== */
+
+i {
+  color: white;
+  background: transparent;
+  padding: 5px;
+}
+li{
+  list-style-type: none;
+}
+footer{
+  background-color: #1c1f54 !important;
+   position: relative;
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-bottom: 0px !important;
+}
+
+/* =============== media queries ================== */
+
+@media(min-width:992px) {}
+
+@media(min-width:768px) and (max-width:991px) {}
+
+@media(min-width:575px) and (max-width:767px) {}
+
+@media(min-width:480px) and (max-width:574px) {}
+
+@media(max-width: 575px) {
+  .welcome {
+    line-height: 2.7rem;
+    font-size: 2.7rem;
+    font-family: 'ubuntu';
+  }
+}
+
+@media(min-width:330px) and (max-width:352px) {
+  .education-training{
+    font-size: 0.8rem;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+@media(min-width:353px) and (max-width:501px) {
+  .education-training{
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+/* =================================== Other  .html files ================================== */
+
+.courseheading{
+  position: relative;
+  margin-top: 4rem !important;
+  background-color: #1c1f54;
+  color: white;
+}
+
+
+
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+

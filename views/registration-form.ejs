@@ -1,0 +1,148 @@
+<%- include('partials/header') %>
+
+  <!-- ========== Section Begins ========== -->
+
+  <section id="registrationform" class="sec">
+    <div class="container text-center">
+      <h2 class="font-weight-bold text-uppercase container text-center mt-3">Registration Form</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-1 my-5">
+
+          <form method="POST" action="/registrationForm" enctype="multipart/form-data">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="firstName" placeholder="Enter your First Name" required>
+              <small id="namevalid" class="form-text text-muted invalid-feedback">
+                Your name must be 2-10 characters long and should not start with a number
+              </small>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="lastName" placeholder="Enter your Last Name" required>
+                <small id="namevalid" class="form-text text-muted invalid-feedback">
+                  Your name must be 2-10 characters long and should not start with a number
+                </small>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" name="fathersName" placeholder="Enter your Father's Name" required>
+                <small id="namevalid" class="form-text text-muted invalid-feedback">
+                  Your name must be 2-10 characters long and should not start with a number
+                </small>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" name="mothersName" placeholder="Enter your Mother's Name" required>
+                <small id="namevalid" class="form-text text-muted invalid-feedback">
+                  Your name must be 2-10 characters long and should not start with a number
+                </small>
+              </div>
+
+
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <label class="input-group-text" for="inputGroupSelect02">Select Course</label>
+                  </div>
+                <select class="custom-select" id="inputGroupSelect02" name="courseType" required>
+                  <option selected>Choose...</option>
+                  <option value="Master Diploma in Computer Application(MDCA)">Master Diploma in Computer Application(MDCA)</option>
+                  <option value="Diploma in Office Automation,Accounting,Publishing(DOAAP)">Diploma in Office Automation,Accounting,Publishing(DOAAP)</option>
+                  <option value="Advance Diploma in Computer Application(ADCA)">Advance Diploma in Computer Application(ADCA)</option>
+                  <option value="Desktop Publishing(DTP)">Desktop Publishing(DTP)</option>
+                  <option value="Basic Computer Course">Basic Computer Course</option>
+                  <option value="Diploma in Computer Application">Diploma in Computer Application</option>
+                  <option value="Advance Diploma in Computer Hardware and Networking">Advance Diploma in Computer Hardware and Networking</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <input type="date" class="form-control" id="dob" name="dateOfBirth" placeholder="Select your Date of Birth" required>
+              </div>
+
+              <div class="form-group">
+                <span><strong>Gender:&nbsp;</strong></span>
+                <label class="radio-inline"><input type="radio" name="optradio" checked value="Male" >Male</label>
+                &nbsp;&nbsp;
+                <label class="radio-inline"><input type="radio" name="optradio" value="Female">Female</label>
+              </div>
+
+
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" name="emailAddress" placeholder="Enter your email" required>
+              <small id="emailvalid" class="form-text text-muted invalid-feedback">
+                Your email must be a valid email
+              </small>
+            </div>
+
+
+            <div class="form-group">
+              <input class="form-control" placeholder="Enter your phone number" name="phoneNumber" id="phone" required>
+              <small id="emailvalid" class="form-text text-muted invalid-feedback">
+                Your phone number must be 10 digit long
+              </small>
+            </div>
+
+
+            <div class="form-group">
+                <textarea class="form-control" placeholder="Enter your Address" name="address" id="exampleFormControlTextarea1"
+                  rows="2" required></textarea>
+              </div>
+  
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Enter your Area Pin Code" name="pinCode" id="pin code" required>
+              </div>
+  
+              <div class="form-group">
+                <input type="text" class="form-control" id="district" placeholder="Enter your District" name="district" required>
+              </div>
+  
+              <div class="form-group">
+                <input type="text" class="form-control" id="state" placeholder="Enter your State" name="state" required>
+              </div>
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Upload Xth Marksheet</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" name="tenthMarksheet" required>
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+
+              <!-- <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Upload Adhar Card</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" name="aadharCard">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Upload Photo</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" name="profilePhoto">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div> -->
+
+            <div class="contactbutton">
+              <button type="submit" class="btn mt-3 btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="#" class="to-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+
+<%- include('partials/footer') %>
