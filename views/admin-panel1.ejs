@@ -34,15 +34,19 @@
     
     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item active">
-                <h5 class="nav-link navhover text-white ml-3" style="color: white;">Hi Admin</h5>
-            </li> -->
-
+        
             <li class="nav-item active">
-                <a class="nav-link navhover text-white ml-3" href="/changeAdminPassword">Change Password <span class="sr-only">(current)</span></a>
+                <a class="nav-link navhover text-white ml-3" href="/admin-panel1">Pending Forms <span class="sr-only">(current)</span></a>
+              </li>
+      
+              <li class="nav-item active">
+                <a class="nav-link navhover text-white ml-3" href="/admin-panel2">Registered Students</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link navhover text-white ml-3" href="/changeAdminPassword">Change Password</a>
             </li>
         <li class="nav-item active">
-            <a class="nav-link navhover text-white ml-3" href="/logout">Logout <span class="sr-only">(current)</span></a>
+            <a class="nav-link navhover text-white ml-3" href="/logout">Logout</a>
         </li>
 
     </div>
@@ -53,7 +57,8 @@
 
 <!-- ========== Section Begins ========== -->
 <section class="sec container mt-5 mb-5">
-        <h2 class="card-title text-center">Pending Registrations</h2>
+    <h2 class="card-title text-center">Pending Registrations</h2>
+    <div class="table-responsive">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -62,6 +67,9 @@
                     <th scope="col">Mobile Number</th>
                     <th scope="col">Course Selected</th>
                     <th scope="col">Action</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -72,17 +80,14 @@
                     <td name="emailAddress"><%= data.emailAddress %></td>
                     <td name="phoneNumber"><%= data.phoneNumber %></td>
                     <td><%= data.courseType %></td>
-                    <td><a href="/createNewStudent?id= <%= data._id %> " class="btn text-center btn-outline-success">Create Account</a> &nbsp; 
-                        <a href="/viewPendingRegForm?id= <%= data._id %> " class="btn text-center btn-outline-success">View</a> &nbsp;
-                        <a href="/deleteRegForm?id= <%= data._id %> " class="btn text-center btn-outline-danger">Delete</a></td>
-                </tr>
-
+                    <td><a href="/createNewStudent?id= <%= data._id %> " class="btn text-center btn-outline-success">Create Account</a></td>
+                    <td><a href="/viewPendingRegForm?id= <%= data._id %> " class="btn text-center btn-outline-success">View</a></td>
+                    <td><a href="/deleteRegForm?id= <%= data._id %> " class="btn text-center btn-outline-danger">Delete</a></td>
+                </tr> 
                 <% }) %>
-
-               
             </tbody>
         </table>
-        <a class="btn cardbutton" href="/admin-panel2">Next</a>
+    </div>
     </section>
 
     <a href="#" class="to-top">
