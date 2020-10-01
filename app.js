@@ -15,8 +15,6 @@ const passportLocalMongoose = require("passport-local-mongoose");
 dotenv.config({path: '.env'});
 connectDB();
 
-
-
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({

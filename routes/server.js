@@ -70,7 +70,7 @@ var upload = multer({
 // Check File Type
 function checkFileType(file, cb) {
     //Allowed ext
-    const filetypes = /jpeg|jpg|png/;
+    const filetypes = /jpeg|jpg|png|pdf/;
     // Check ext
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
     //Check mime
@@ -148,9 +148,15 @@ app.post('/registrationForm',upload.single('tenthMarksheet'), function (req, res
                     "\npinCode: " + req.body.pinCode +
                     "\ndistrict: " + req.body.district +
                     "\nstate: " + req.body.state +
-                    "\ntenthMarksheet: " + req.body.tenthMarksheet 
+                    "\ntenthMarksheet: " + req.body.tenthMarksheet ,
                     // "\naadharCard: " + req.body.aadharCard +
                     // "\nprofilePhoto: " + req.body.profilePhoto
+                    attachments: [
+                        {
+                            filename: fileinfo,
+                            path: './public/uploads/'+fileinfo
+                        }
+                    ],
             };
 
             transporter.sendMail(mailOptions, (error, info) => {
@@ -280,64 +286,64 @@ app.get("/login", function (req, res) {
     res.render("login");
 });
 
-app.get("/register", function (req, res) {
-    res.render("register");
-});
+// app.get("/register", function (req, res) {
+//     res.render("register");
+// });
 
 
 
-app.post('/register', (req, res) => {
-    var {
-        email,
-        password,
-        confirmpassword
-    } = req.body;
-    var err;
-    if (!email || !password || !confirmpassword) {
-        err = "Please Fill All The Fields...";
-        res.render('register', {
-            'err': err
-        });
-    }
-    if (password != confirmpassword) {
-        err = "Passwords Don't Match";
-        res.render('register', {
-            'err': err,
-            'email': email,
-        });
-    }
-    if (typeof err == 'undefined') {
-        User.findOne({
-            email: email
-        }, function (err, data) {
-            if (err) throw err;
-            if (data) {
-                console.log("User Exists");
-                err = "User Already Exists With This Email...";
-                res.render('home', {
-                    'err': err,
-                    'email': email,
-                });
-            } else {
-                bcrypt.genSalt(10, (err, salt) => {
-                    if (err) throw err;
-                    bcrypt.hash(password, salt, (err, hash) => {
-                        if (err) throw err;
-                        password = hash;
-                        User({
-                            email,
-                            password,
-                        }).save((err, data) => {
-                            if (err) throw err;
-                            req.flash('success_message', "Registered Successfully.. Login To Continue..");
-                            res.redirect('/login');
-                        });
-                    });
-                });
-            }
-        });
-    }
-});
+// app.post('/register', (req, res) => {
+//     var {
+//         email,
+//         password,
+//         confirmpassword
+//     } = req.body;
+//     var err;
+//     if (!email || !password || !confirmpassword) {
+//         err = "Please Fill All The Fields...";
+//         res.render('register', {
+//             'err': err
+//         });
+//     }
+//     if (password != confirmpassword) {
+//         err = "Passwords Don't Match";
+//         res.render('register', {
+//             'err': err,
+//             'email': email,
+//         });
+//     }
+//     if (typeof err == 'undefined') {
+//         User.findOne({
+//             email: email
+//         }, function (err, data) {
+//             if (err) throw err;
+//             if (data) {
+//                 console.log("User Exists");
+//                 err = "User Already Exists With This Email...";
+//                 res.render('home', {
+//                     'err': err,
+//                     'email': email,
+//                 });
+//             } else {
+//                 bcrypt.genSalt(10, (err, salt) => {
+//                     if (err) throw err;
+//                     bcrypt.hash(password, salt, (err, hash) => {
+//                         if (err) throw err;
+//                         password = hash;
+//                         User({
+//                             email,
+//                             password,
+//                         }).save((err, data) => {
+//                             if (err) throw err;
+//                             req.flash('success_message', "Registered Successfully.. Login To Continue..");
+//                             res.redirect('/login');
+//                         });
+//                     });
+//                 });
+//             }
+//         });
+//     }
+// });
 
 app.post('/login', (req, res, next) => {
     passport.authenticate('local', {
@@ -380,7 +386,7 @@ app.get('/createNewStudent', (req, res) => {
             }).catch(err => {
                 res.send("Error" + err);
             });
-            RegistrationForm.find({}).exec(function (err, users) {
+            AcceptedRegistrationForm.find({}).exec(function (err, users) {
                 if (err) throw err;
                 res.render('admin-panel1', {
                     "datas": users
@@ -422,7 +428,7 @@ app.get('/deleteAcceptedRegForm', (req, res) => {
             console.log("Deleted " + deletedForm);
             AcceptedRegistrationForm.find({}).exec(function (err, users) {
                 if (err) throw err;
-                res.render('admin-panel2', {
+                res.render('admin-panel1', {
                     "datas": users
                 });
             });
@@ -431,7 +437,7 @@ app.get('/deleteAcceptedRegForm', (req, res) => {
         });
     });
 
-})
+});
 
 app.get('/viewPendingRegForm', (req, res) => {
     let id = req.query.id.trim();
