@@ -103,7 +103,7 @@ li{
         transition: all .4s;
       }
       .to-top.active{
-        bottom: 32px;
+        bottom: 33px;
         pointer-events: auto;
         opacity: 1;
       }
@@ -295,7 +295,7 @@ footer{
 #myImg {
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 5px;
+  padding: 6px;
   width: 150px;
 }
 
