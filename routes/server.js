@@ -1,5 +1,5 @@
 const express = require('express');
-var ejs = require('ejs');
+const ejs = require('ejs');
 const nodemailer = require('nodemailer');
 const User = require('../auth/User');
 const RegistrationForm = require('../auth/RegistrationForm');
@@ -9,14 +9,14 @@ const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const cookieParser = require('cookie-parser');
-var localStrategy = require('passport-local').Strategy;
+const localStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const AcceptedRegistrationForm = require('../auth/AcceptedRegistrationForm');
 require('./passport')(passport);
 const mongoose = require('mongoose');
 const multer = require('multer');
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
