@@ -103,19 +103,19 @@ li{
         transition: all .4s;
       }
       .to-top.active{
-        bottom: 32px;
+        bottom: 33px;
         pointer-events: auto;
         opacity: 1;
       }
 
 /* =========================== Home page ========================= */
+
 nav img {
   position: absolute;
   left: 5%;
   top: -5px;
   height: 68px;
   width: 80px;
-
 }
 
 .navbar {
@@ -127,7 +127,8 @@ nav img {
   color: #1c1f54 !important;
 }
 
-.bgimage {
+
+/* .bgimage {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(11, 14, 15, 0.6)), url('/frontbg.jpg') no-repeat center center fixed;
   opacity: 0.9;
   background-size: 100% 100%;
@@ -138,18 +139,18 @@ nav img {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+} */
 
-.welcome {
+/* .welcome {
   line-height: 4.5rem;
   font-size: 3.5rem;
   font-family: 'ubuntu';
-}
+} */
 
-.landingpagetext {
+/* .landingpagetext {
   position: relative;
   top: 30%;
-}
+} */
 
 /* ============================= About Us ========================== */
 
@@ -200,9 +201,70 @@ nav img {
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
+/* ======================= Photo Gallary ========================= */
+
+.pic1:after {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(rgba(7, 110, 212, 0.1), rgb(33, 37, 41, 0.4)) rgba(0,0,0,0.6);
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 50%;
+  left: 8%;
+  z-index: 20;
+  color: white;
+}
+
+.line1 {
+  font-family: 'ubuntu';
+  margin: 30px auto;
+  border-right: 3px solid rgba(255, 255, 255, 0.75);
+  font-size: 55px;
+  font-weight: bolder;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.line2 {
+  font-size: 30px;
+  position: relative;
+  left: 50%;
+}
+
+.anim-typewriter {
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+  blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter{
+  from {
+        width: 0;
+  }
+  to {
+        width: 20em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+        border-right-color: transparent;
+  }
+}
 
 
 /* ======================== Contact Us ====================== */
+
 .contactbutton {
   display: flex;
   align-items: center;
@@ -254,34 +316,284 @@ footer{
 
 /* =============== media queries ================== */
 
-@media(min-width:992px) {}
+/* @media(min-width:992px) {}
 
 @media(min-width:768px) and (max-width:991px) {}
 
 @media(min-width:575px) and (max-width:767px) {}
 
-@media(min-width:480px) and (max-width:574px) {}
+@media(min-width:480px) and (max-width:574px) {} */
 
-@media(max-width: 575px) {
-  .welcome {
-    line-height: 2.7rem;
-    font-size: 2.7rem;
+@media(min-width: 300px) and (max-width: 349px) {
+
+  .carousel-content {
+    position: absolute;
+    top: 13%;
+    left: 4%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
     font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 10px;
+    position: relative;
+    left: 23%;
+    top: 80%;
   }
 }
 
-@media(min-width:330px) and (max-width:352px) {
-  .education-training{
-    font-size: 0.8rem;
-    font-family: 'Raleway', sans-serif;
+@media(min-width: 350px) and (max-width: 400px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 5%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 14px;
+    position: relative;
+    left: 10%;
   }
 }
-@media(min-width:353px) and (max-width:501px) {
-  .education-training{
-    font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
+
+@media(min-width: 401px) and (max-width: 449px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 6%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 14px;
+    position: relative;
+    left: 12%;
   }
 }
+
+@media(min-width: 450px) and (max-width: 500px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 7%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 15px;
+    position: relative;
+    left: 14%;
+  }
+}
+
+@media(min-width: 501px) and (max-width: 599px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 9%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 16px;
+    position: relative;
+    left: 17%;
+  }
+}
+
+@media(min-width:600px) and (max-width: 749px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 8%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 18px;
+    position: relative;
+    left: 35%;
+  }
+}
+
+@media(min-width:750px) and (max-width: 899px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 7%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 33px;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 20px;
+    position: relative;
+    left: 40%;
+  }
+}
+
+@media(min-width:900px) and (max-width: 1049px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 8%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 25px;
+    position: relative;
+    left: 33%;
+  }
+}
+
+@media(min-width:1050px) and (max-width: 1200px) {
+
+  .carousel-content {
+    position: absolute;
+    bottom: 50%;
+    left: 9%;
+    z-index: 20;
+    color: white;
+  }
+
+  .line1 {
+    font-family: 'ubuntu';
+    margin: 30px auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    font-size: 45px;
+    font-weight: bolder;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+  
+  .line2 {
+    font-size: 27px;
+    position: relative;
+    left: 32%;
+  }
+}
+
+
+/* @media(max-width: 575px) {}
+
+@media(min-width:330px) and (max-width:352px) {}
+
+@media(min-width:353px) and (max-width:501px) {} */
+
+
 
 /* =================================== Other  .html files ================================== */
 
@@ -295,7 +607,7 @@ footer{
 #myImg {
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 5px;
+  padding: 6px;
   width: 150px;
 }
 
