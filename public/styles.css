@@ -484,7 +484,7 @@ footer{
     font-family: 'ubuntu';
     margin: 30px auto;
     border-right: 3px solid rgba(255, 255, 255, 0.75);
-    font-size: 33px;
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
@@ -493,9 +493,9 @@ footer{
   }
   
   .line2 {
-    font-size: 18px;
+    font-size: 16px;
     position: relative;
-    left: 35%;
+    left: 32%;
   }
 }
 
