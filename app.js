@@ -3,14 +3,10 @@ var app= express();
 require('dotenv').config();
 var bodyParser= require('body-parser');
 const connectDB= require('./config/db');
-const User = require('./auth/User');
-const RegistrationForm = require('./auth/RegistrationForm');
-const ContactForm = require('./auth/ContactForm');
 const dotenv= require('dotenv');
 
 const session = require('express-session');
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
 
 dotenv.config({path: '.env'});
 connectDB();

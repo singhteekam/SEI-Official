@@ -1,0 +1,59 @@
+<%- include('../partials/admin-header') %>
+
+
+    <!-- ========== Section Begins ========== -->
+
+    <section class="sec container mb-5">
+        <h2 class="card-title mt-5 text-center"> <%= info.firstName %> <%= info.lastName %> Profile </h2>
+
+        <div class="card d-block m-auto">
+            <img class="card-img-top d-block m-auto" style="border-radius: 100%; height: 15rem; width: 15rem;"
+                src="logo.png" alt="User-Profile">
+            <hr><br>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <form action="/updateStudentProfile?id= <%= info._id %>" method="POST">
+                        <li class="list-group-item"><strong>Username:</strong><input type="text" name="updateFirstName" id="" value="<%= info.firstName %>"></li>
+                    
+                        <li class="list-group-item"><strong>Course Type: </strong>
+                        <select class="custom-select" id="inputGroupSelect02" name="updateCourseType">
+                            <option selected><%= info.courseType %></option>
+                            <option value="Master Diploma in Computer Application(MDCA)">Master Diploma in Computer Application(MDCA)</option>
+                            <option value="Diploma in Office Automation,Accounting,Publishing(DOAAP)">Diploma in Office Automation,Accounting,Publishing(DOAAP)</option>
+                            <option value="Advance Diploma in Computer Application(ADCA)">Advance Diploma in Computer Application(ADCA)</option>
+                            <option value="Desktop Publishing(DTP)">Desktop Publishing(DTP)</option>
+                            <option value="Basic Computer Course">Basic Computer Course</option>
+                            <option value="Diploma in Computer Application">Diploma in Computer Application</option>
+                            <option value="Advance Diploma in Computer Hardware and Networking">Advance Diploma in Computer Hardware and Networking</option>
+                          </select></li>
+
+                    <li class="list-group-item"><strong>Gender: </strong><%= info.gender %></li>
+                    <li class="list-group-item"><strong>DOB: </strong><%= info.dateOfBirth %></li>
+                    <li class="list-group-item"><strong>E-mail: </strong><%= info.emailAddress %></li>
+                    <li class="list-group-item"><strong>Mobile Number: </strong><input type="text" name="updatePhoneNumber" id="" value="<%= info.phoneNumber %>"></li>
+                    <li class="list-group-item"><strong>Area Pin Code: </strong><input type="text" name="updatePinCode" id="" value="<%= info.pinCode %>"></li>
+                    <li class="list-group-item"><strong>District: </strong><input type="text" name="updateDistrict" id="" value="<%= info.district %>"></li>
+                    <li class="list-group-item"><strong>State: </strong><input type="text" name="updateState" id="" value="<%= info.state %>"></li>
+                    <li class="list-group-item"><strong>Address: </strong><input type="text" name="updateAddress" id="" value="<%= info.address %>"></li>
+                    <li class="list-group-item"><strong>Final Grade: </strong><input type="text" name="finalGrade" id="" value="<%= info.finalGrade %>"></li>
+                    <li class="list-group-item"><strong>Course Start date: </strong><input type="date" placeholder="Course start date" name="courseStarts" id="dob" value="<%= info.courseStarts %>"></li>
+                    <li class="list-group-item"><strong>Course End Date: </strong><input type="date" name="courseEnds" id="dob" placeholder="Course end date" value="<%= info.courseEnds %>"></li>
+     <br>
+                      <div class="contactbutton">
+                        <button class="btn" type="submit">Submit</button>
+                      </div>
+
+                </form>
+                  </ul>
+            </div>
+
+            <!-- <a href="/giveFinalGrade?id= <%= info._id %> "><button>Assign Grade</button></a> -->
+
+        </div>
+    </section>
+</div>
+    <a href="#" class="to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <%- include('../partials/footer') %>

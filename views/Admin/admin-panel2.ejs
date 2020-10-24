@@ -1,0 +1,42 @@
+<%- include('../partials/admin-header') %>
+
+
+<!-- ========== Section Begins ========== -->
+<section class="sec container mt-5 mb-5">
+  <h2 class="card-title text-center">Registered Students</h2>
+  <div class="table-responsive">
+  <table class="table">
+      <thead class="thead-dark">
+          <tr>
+              <th scope="col">Username</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Mobile Number</th>
+              <th scope="col">Course Selected</th>
+              <th scope="col">Action</th>
+              <th></th>
+              <th></th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+        <% datas.forEach(function (data) { %>
+            <tr>
+                <td><%= data.firstName %></td>
+                <td><%= data.emailAddress %></td>
+                <td><%= data.phoneNumber %></td>
+                <td><%= data.courseType %></td>
+                <td><a href="/viewAcceptedRegForm?id= <%= data._id %> " class="btn btn-outline-success">View</a></td>
+                <td><a href="editRegistrationForm?id= <%= data._id %>" class="btn btn-outline-success">Edit</a></td>                 
+                <td> <a href="/deleteAcceptedRegForm?id= <%= data._id %> "  class="btn btn-outline-danger">Delete</a></td>            
+            </tr>
+        <% }) %>
+      </tbody>
+  </table>
+</div>
+</section>
+
+<a href="#" class="to-top">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+<%- include('../partials/footer') %>
