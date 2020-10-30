@@ -151,6 +151,7 @@
                   *** Only png,pdf,jpg,jpeg file are supported. Max file size: 200 KB
                 </small>
               </div>
+              <div id="file-upload-filename"></div>
 
               <!-- <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -184,5 +185,18 @@
   <a href="#" class="to-top">
     <i class="fa fa-chevron-up"></i>
   </a>
+
+<script>
+  var input = document.getElementById( 'inputGroupFile01' );
+  var infoArea = document.getElementById( 'file-upload-filename' );
+
+  input.addEventListener( 'change', showFileName );
+
+  function showFileName( event ) { 
+    var input = event.srcElement;
+    var fileName = input.files[0].name;
+    infoArea.textContent = 'File name: ' + fileName;
+  }
+</script>
 
 <%- include('partials/footer') %>

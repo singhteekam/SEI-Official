@@ -8,9 +8,14 @@
   <% students.forEach(function (student) { %>
 
   <div class="card d-block mt-5 mb-3">
-    <img class="card-img-top d-block m-auto" style="border-radius: 100%; height: 15rem; width: 15rem;" src="logo.png"
-      alt="User-Profile">
-    <hr><br>
+    <br>
+    <% if(student.profilephoto!==""){ %>
+      <img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 15rem; width: 15rem;" src="studentdp/<%=student.profilephoto%>" alt="Error">
+    <% }else{ %>
+        <a href="#"><img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 15rem; width: 15rem;" src="logo.png"
+          alt="User-Profile">
+        </a>
+    <% } %>
     <div class="card-body">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong>Username: </strong><%= student.username %></li>
