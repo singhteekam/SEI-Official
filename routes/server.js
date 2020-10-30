@@ -10,6 +10,7 @@ require('./passportLogin')(passport);
 
 const AllCourses= require('./AllCourses');
 const adminPanel= require('./adminPanel');
+const studentDashboard= require('./student_dashboard');
 const registrationForm= require('./User/registrationForm');
 const signUp= require('./User/signUp');
 const app = express.Router();
@@ -54,12 +55,6 @@ app.get("/", function (req, res) {
     });
 });
 
-//View Student Profile
-app.get('/viewProfile', (req, res)=>{
-    res.render('./Student/viewProfile', {
-        "user": req.user
-    });
-});
 
 
 app.get("/forgetpass", function (req, res) {
@@ -126,6 +121,9 @@ app.post('/login', (req, res, next) => {
 
 // Admin Panel
 app.use(adminPanel);
+
+//Student Dashboard
+app.use(studentDashboard);
 
 
 module.exports = app;

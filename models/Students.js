@@ -23,6 +23,10 @@ const StudentSchema=new Schema({
         type:String,
         required:true
     },
+    profilephoto:{
+        type: String,
+        default:""
+    }
 });
 
 module.exports=Student=mongoose.model('students',StudentSchema);

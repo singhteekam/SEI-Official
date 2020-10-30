@@ -7,11 +7,31 @@
 <section class="sec container mb-5">
 
   <div class="card d-block mt-5">
-    <a href="#"><img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 12rem; width: 15rem;" src="logo.png"
-      alt="User-Profile">
-    </a>
-    <a class="d-block text-center" type="file" href="#">Upload Image</a>
-    <hr><br>
+    
+    
+    <form action="/uploadProfilePhoto" method="POST" enctype="multipart/form-data">
+      <% if(user.profilephoto!==""){ %>
+        <img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 15rem; width: 15rem;" src="studentdp/<%=user.profilephoto%>" alt="Error">
+        <% }else{ %>
+          <a href="#"><img class="card-img-top d-block m-auto" style="border-radius: 50%; height: 15rem; width: 15rem;" src="logo.png"
+            alt="User-Profile">
+          </a>
+          <% } %>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" name="profilephoto" required>
+        <label class="custom-file-label" for="inputGroupFile01">Upload Profile photo</label>
+        <div id="file-upload-filename"></div>
+      </div>
+      <small style="color: red;">
+        *** Only png,jpg,jpeg file are supported. Max file size: 200 KB
+      </small>
+      <!-- <a class="d-block text-center" type="file" href="/uploadProfilePhoto">Upload Image</a> -->
+      <input type="submit" name="" id="" value="Upload">
+    </form>
+
+    
+
+    <hr>
     
     <div class="card-body">
       <ul class="list-group list-group-flush">
@@ -34,5 +54,18 @@
 <a href="#" class="to-top">
   <i class="fa fa-chevron-up"></i>
 </a>
+
+<script>
+var input = document.getElementById( 'inputGroupFile01' );
+var infoArea = document.getElementById( 'file-upload-filename' );
+
+input.addEventListener( 'change', showFileName );
+
+function showFileName( event ) { 
+  var input = event.srcElement;
+  var fileName = input.files[0].name;
+  infoArea.textContent = 'File name: ' + fileName;
+}
+</script>
 
 <%- include('../partials/footer') %>
