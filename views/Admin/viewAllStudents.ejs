@@ -7,21 +7,24 @@
 
   <% students.forEach(function (student) { %>
 
-  <div class="card d-block m-auto">
+  <div class="card d-block mt-5 mb-3">
     <img class="card-img-top d-block m-auto" style="border-radius: 100%; height: 15rem; width: 15rem;" src="logo.png"
       alt="User-Profile">
     <hr><br>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><strong>Username:</strong><%= student.username %></li>
+        <li class="list-group-item"><strong>Username: </strong><%= student.username %></li>
         <li class="list-group-item"><strong>Email: </strong><%= student.email %></li>
         <li class="list-group-item"><strong>Mobile no.: </strong><%= student.mobile %></li>
-        
+        <li class="list-group-item"><strong>Study Material: </strong>
+          <div>
+            <li><a href="https://drive.google.com/file/d/1GeNstlv91JDTs78ZtxxeUct81Jto5Dew/view?usp=sharing" target="_blank">CCC Notes part 1...</a></li>
+            <li><a href="https://drive.google.com/file/d/1PEACb8HG0Zov77zyG6W6fiMhO6kcJ39r/view?usp=sharing"  target="_blank">CCC Notes part 2...</a></li>        
+          </div>
         </li>
       </ul>
     </div>
   </div>
-  <hr>
 
   <% }) %>
 

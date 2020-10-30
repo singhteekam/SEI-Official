@@ -239,6 +239,14 @@ nav img {
   left: 50%;
 }
 
+.admission-open{
+  font-family: 'ubuntu';
+  position: absolute;
+  top: 130%;
+  left: 70%;
+  width: 300px;
+}
+
 .anim-typewriter {
   animation: typewriter 4s steps(40) 1s 1 normal both,
   blinkTextCursor 500ms steps(40) infinite normal;
@@ -352,6 +360,15 @@ footer{
     left: 23%;
     top: 80%;
   }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 130%;
+    left: 30%;
+    width: 200px;
+    font-size: 15px;
+  }
 }
 
 @media(min-width: 350px) and (max-width: 400px) {
@@ -380,6 +397,15 @@ footer{
     font-size: 14px;
     position: relative;
     left: 10%;
+  }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    width: 200px;
+    font-size: 15px;
   }
 }
 
@@ -410,6 +436,15 @@ footer{
     position: relative;
     left: 12%;
   }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    width: 200px;
+    font-size: 15px;
+  }
 }
 
 @media(min-width: 450px) and (max-width: 500px) {
@@ -437,7 +472,16 @@ footer{
   .line2 {
     font-size: 15px;
     position: relative;
-    left: 14%;
+    left: 16%;
+  }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 33%;
+    width: 190px;
+    font-size: 15px;
   }
 }
 
@@ -466,7 +510,16 @@ footer{
   .line2 {
     font-size: 16px;
     position: relative;
-    left: 17%;
+    left: 20%;
+  }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 38%;
+    width: 190px;
+    font-size: 15px;
   }
 }
 
@@ -497,6 +550,15 @@ footer{
     position: relative;
     left: 32%;
   }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    width: 250px;
+    font-size: 25px;
+  }
 }
 
 @media(min-width:750px) and (max-width: 899px) {
@@ -524,7 +586,16 @@ footer{
   .line2 {
     font-size: 20px;
     position: relative;
-    left: 40%;
+    left: 35%;
+  }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 250px;
+    font-size: 25px;
   }
 }
 
@@ -555,6 +626,15 @@ footer{
     position: relative;
     left: 33%;
   }
+
+  .admission-open{
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 58%;
+    width: 250px;
+    font-size: 25px;
+  }
 }
 
 @media(min-width:1050px) and (max-width: 1200px) {
@@ -582,17 +662,23 @@ footer{
   .line2 {
     font-size: 27px;
     position: relative;
-    left: 32%;
+    left: 38%;
+  }
+
+  .admission-open{
+
+    font-family: 'ubuntu';
+    position: absolute;
+    top: 100%;
+    left: 60%;
+    width: 250px;
+    font-size: 25px;
   }
 }
 
-
 /* @media(max-width: 575px) {}
-
 @media(min-width:330px) and (max-width:352px) {}
-
 @media(min-width:353px) and (max-width:501px) {} */
-
 
 
 /* =================================== Other  .html files ================================== */
